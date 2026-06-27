@@ -261,6 +261,14 @@ body.dark #per-page{background:#1f1b15;color:#cabfa9;border-color:#3a352b;}
 body.dark .ct-select{background:#1f1b15;color:#cabfa9;border-color:#3a352b;}
 body.dark .ct-search{background:#1f1b15;color:#e6dcc8;border-color:#3a352b;}
 .fs-body .yr-slider{margin:0 9px;}
+.master-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px;padding:10px 14px;background:linear-gradient(135deg,#f3e7cf,#ecd9b4);border:1.5px solid #c9a24b;border-radius:10px;}
+.mf-label{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#7a5327;}
+.mf-select{padding:9px 12px;border:1.5px solid #b8893f;border-radius:8px;background:#fff;color:#3a2c1a;font-size:.9rem;font-weight:700;cursor:pointer;min-width:200px;}
+.mf-btn{padding:8px 12px;background:#8a5a2c;color:#fff;border:none;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;}
+.mf-note{font-size:.72rem;color:#9a7a55;font-style:italic;margin-left:auto;}
+body.dark .master-filter{background:linear-gradient(135deg,#2a2118,#352a1b) !important;border-color:#a06a36 !important;}
+body.dark .mf-select{background:#1f1b15;color:#f1eadc;border-color:#a06a36;}
+body.dark .mf-note{color:#b8a17e;}
 </style>
 </head>
 <body>
@@ -275,10 +283,8 @@ body.dark .ct-search{background:#1f1b15;color:#e6dcc8;border-color:#3a352b;}
   <div class="map-row" style="display:flex;gap:14px;align-items:flex-start;justify-content:center;padding:0 14px 6px;flex-wrap:wrap;">
     <div style="flex:0 0 230px;max-width:46vw;display:flex;flex-direction:column;gap:10px;margin-top:16px;"><div class="overview-head">Collection overview</div><div class="stats-panel gen-stack" id="gen-panel-top"></div><div class="card" style="display:flex;flex-direction:column;padding:12px 12px 10px;"><div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:2px;"><div class="card-title" id="donut-title" style="font-size:.8rem;margin:0;">Coins by Country</div><button class="donut-cyc" onclick="cycleDonut(1)" title="Cycle breakdown (country / composition / type)">⟳</button></div><div style="flex:1;display:flex;align-items:center;justify-content:center;max-height:230px;"><canvas id="countryChart"></canvas></div></div><div class="stats-panel gen-stack" id="gen-panel-bottom"></div></div>
     <div style="flex:0 1 880px;min-width:0;max-width:880px;position:relative;"><div id="map-hint" style="position:absolute;left:calc(100% + 26px);top:43%;width:150px;font-size:.82rem;font-weight:600;color:#8a7a5f;opacity:.5;line-height:1.45;pointer-events:none;">Double‑click a country to open its side panel</div>
+      <div class="master-filter"><span class="mf-label">Collection</span><select id="coll-select" onchange="setCollection(this.value)" class="mf-select"><option value="">All collections</option></select><button onclick="openCollModal()" class="mf-btn">+ New / Manage</button><span class="mf-note">Master filter - applies to the map, stats and coins</span></div>
       <div class="coll-bar" style="display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;">
-        <span class="cb-cap">Collection</span>
-        <select id="coll-select" onchange="setCollection(this.value)" class="cb-sel" style="min-width:170px;"><option value="">All collections</option></select>
-        <button onclick="openCollModal()" class="cb-btn">+ New / Manage</button>
         <span class="cb-cap">Color</span><select id="map-metric" class="cb-sel" onchange="setMapMetric(this.value)"><option value="count">Coins</option><option value="asw">Silver (ASW)</option><option value="issuers">Issuers</option></select>
         <span class="cb-cap">Region</span><select id="map-region" class="cb-sel" onchange="setRegion(this.value)"><option value="">All regions</option><option>Africa</option><option>Asia</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option></select>
         
@@ -968,7 +974,7 @@ function buildFilterUI(){
   h+='<button class="fs-sortbtn'+(sortCol==='weight'?' active':'')+'" data-sort="weight"><span>Weight</span><span class="fs-arrow" id="fsar-weight">'+(sortCol==='weight'?(sortDir===1?'↑':'↓'):'')+'</span></button>';
   h+='<button class="fs-sortbtn'+(sortCol==='dimensions'?' active':'')+'" data-sort="dimensions"><span>Dimensions</span><span class="fs-arrow" id="fsar-dimensions">'+(sortCol==='dimensions'?(sortDir===1?'↑':'↓'):'')+'</span></button>';
   h+='</div>';
-  h+='<div class="fs-sec">Year range</div><div class="yr-slider"><div class="yr-track"></div><div class="yr-fill" id="yr-fill"></div><input type="range" id="yr-lo" min="'+yMin+'" max="'+yMax+'" value="'+FILTERS.yLo+'"><input type="range" id="yr-hi" min="'+yMin+'" max="'+yMax+'" value="'+FILTERS.yHi+'"></div><div class="yr-labels"><span id="yr-lo-lbl">'+FILTERS.yLo+'</span><span id="yr-hi-lbl">'+FILTERS.yHi+'</span></div>';
+  h+='<div class="fs-sec">Year range</div><div class="yr-slider" style="margin:4px 12px 0;"><div class="yr-track"></div><div class="yr-fill" id="yr-fill"></div><input type="range" id="yr-lo" min="'+yMin+'" max="'+yMax+'" value="'+FILTERS.yLo+'"><input type="range" id="yr-hi" min="'+yMin+'" max="'+yMax+'" value="'+FILTERS.yHi+'"></div><div class="yr-labels"><span id="yr-lo-lbl">'+FILTERS.yLo+'</span><span id="yr-hi-lbl">'+FILTERS.yHi+'</span></div>';
   h+='<div class="fs-sec">Show</div>';
   h+='<select class="fs-sel" onchange="FILTERS.dups=this.value;recalculate();"><option value="">All coins</option><option value="type"'+(FILTERS.dups==='type'?' selected':'')+'>Only duplicates (same N#)</option><option value="year"'+(FILTERS.dups==='year'?' selected':'')+'>Only duplicates (N# + year)</option></select>';
   {const _ut=[...new Set([].concat.apply([],coins.map(function(c){return c.tags||[];})))].sort();h+='<details class="fs-acc"><summary class="fs-sec">Tags'+(FILTERS.tags.size?(' ('+FILTERS.tags.size+')'):'')+'</summary><div class="fs-acc-body">';if(_ut.length){_ut.forEach(function(t){h+=chk('tags',t,t);});}else{h+='<div style="font-size:.72rem;color:#999;padding:3px 2px;">No tags yet - add tags when adding or editing a coin.</div>';}h+='</div></details>';}
