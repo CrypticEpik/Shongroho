@@ -1381,11 +1381,17 @@ function setupWMapEvents(){
 
 // ── ADD / EDIT COIN ────────────────────────────────────────────────────────────
 let _nm_mode='silver';
-function previewImg(input,prevId){
+async function previewImg(input,prevId){
   const file=input.files[0];if(!file)return;
+  const div=document.getElementById(prevId);
+  if(typeof SUPA!=='undefined'&&SUPA){
+    div.innerHTML='<span style="font-size:.75rem;color:#888;">Uploading\u2026</span>';
+    try{const url=await sbUploadImage(file);div.innerHTML='<img src="'+url+'" style="max-width:100%;max-height:130px;object-fit:contain;border-radius:6px;">';div.dataset.src=url;}
+    catch(e){div.innerHTML='<span style="font-size:.75rem;color:#c0392b;">Upload failed</span>';console.warn('upload',e);}
+    return;
+  }
   const reader=new FileReader();
   reader.onload=e=>{
-    const div=document.getElementById(prevId);
     div.innerHTML='<img src="'+e.target.result+'" style="max-width:100%;max-height:130px;object-fit:contain;border-radius:6px;">';
     div.dataset.src=e.target.result;
   };
@@ -1467,7 +1473,7 @@ function saveEdit(){
 let _nmPhotos=[],_ecPhotos=[];
 function _zoom(src){const li=document.getElementById('img-lightbox'),im=document.getElementById('lb-img');if(im)im.src=src;if(li)li.style.display='flex';}
 function _renderPhotoPrev(prevId,arr,which){const el=document.getElementById(prevId);if(!el)return;el.innerHTML=arr.map(function(u,i){return '<span style="position:relative;display:inline-block;"><img src="'+u+'" style="width:46px;height:46px;object-fit:cover;border-radius:6px;border:1px solid #ddd;margin:2px;"><button type="button" onclick="_rmPhoto(\''+which+'\','+i+',\''+prevId+'\')" style="position:absolute;top:-3px;right:-3px;background:#c0392b;color:#fff;border:none;border-radius:50%;width:16px;height:16px;font-size:.62rem;cursor:pointer;line-height:1;">\u00d7</button></span>';}).join('');}
-function previewMulti(input,prevId,which){const arr=which==='ec'?_ecPhotos:_nmPhotos;const files=[].slice.call(input.files||[]);files.forEach(function(f){const r=new FileReader();r.onload=function(e){arr.push(e.target.result);_renderPhotoPrev(prevId,arr,which);};r.readAsDataURL(f);});input.value='';}
+function previewMulti(input,prevId,which){const arr=which==='ec'?_ecPhotos:_nmPhotos;const files=[].slice.call(input.files||[]);if(typeof SUPA!=='undefined'&&SUPA){files.forEach(function(f){sbUploadImage(f).then(function(url){arr.push(url);_renderPhotoPrev(prevId,arr,which);},function(e){console.warn('upload',e);});});input.value='';return;}files.forEach(function(f){const r=new FileReader();r.onload=function(e){arr.push(e.target.result);_renderPhotoPrev(prevId,arr,which);};r.readAsDataURL(f);});input.value='';}
 function _rmPhoto(which,i,prevId){const arr=which==='ec'?_ecPhotos:_nmPhotos;arr.splice(i,1);_renderPhotoPrev(prevId,arr,which);}
 function parseTags(s){return String(s||'').split(',').map(function(t){return t.trim();}).filter(Boolean);}
 function gradeCode(n){n=+n;if(!n||n<1)return '';let p;if(n<=1)p='PO';else if(n===2)p='FR';else if(n===3)p='AG';else if(n<=7)p='G';else if(n<=11)p='VG';else if(n<=19)p='F';else if(n<=39)p='VF';else if(n<=49)p='XF';else if(n<=59)p='AU';else p='MS';return p+n;}
@@ -1586,6 +1592,7 @@ async function supabaseSave(){if(!_user||!SBC)return;try{setOwnerStatus('Saving�
 function sbDeleteCoin(id){if(_user&&SBC){SBC.from('coins').delete().match({user_id:_user.id,id:String(id)}).then(function(){},function(){});}}
 function sbDeleteCollection(id){if(_user&&SBC){SBC.from('collections').delete().match({user_id:_user.id,id:id}).then(function(){},function(){});}}
 function sbSaveNumistaKey(k){if(_user&&SBC){SBC.from('profiles').upsert({id:_user.id,numista_key:k}).then(function(){},function(){});}}
+async function sbUploadImage(file){if(!_sbReady()||!_user)throw new Error('not signed in');var ext=((file.name||'img').split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'')||'jpg';var path=_user.id+'/'+Date.now()+'-'+Math.random().toString(36).slice(2)+'.'+ext;var up=await SBC.storage.from('coin-images').upload(path,file,{cacheControl:'3600',upsert:false});if(up.error)throw up.error;return SBC.storage.from('coin-images').getPublicUrl(path).data.publicUrl;}
 function cloudSaveSoon(){ clearTimeout(_saveTimer); _saveTimer=setTimeout(cloudSave,400); }
 async function cloudSave(){
   if(SUPA)return supabaseSave();
