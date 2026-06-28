@@ -1129,7 +1129,7 @@ function openSettings(){toggleUserMenu();var k=document.getElementById('set-numi
 function saveSettings(){var k=(document.getElementById('set-numista').value||'').trim();_profile.numista_key=k;try{localStorage.setItem('numista_key',k);}catch(e){}var nm=document.getElementById('nm-apikey');if(nm)nm.value=k;_saveProfile();closeP('settings-ov');}
 function _admToggle(btn){var d=btn.parentElement.nextElementSibling;if(d){var open=d.style.display!=='none';d.style.display=open?'none':'block';btn.textContent=open?'View':'Hide';}}
 var TOUR=[
-{sel:"#user-menu",act:"menu",title:"1. Your profile",text:"Your account, settings, and this tutorial all live in this profile menu."},
+{sel:"#user-chip",title:"1. Your profile",text:"This is your profile. Click it anytime for your account, settings, and to replay this tutorial."},
 {sel:"#settings-ov .pmodal",act:"settings",title:"2. Settings",text:"Open Settings to manage the look of the app and your Numista API key."},
 {sel:"#set-numista",act:"settings",title:"Numista API key",html:'Paste your free Numista API key here to auto-fill coin details. Get one at <a href="https://en.numista.com/api/api_key.php" target="_blank" style="color:#8a5a2c;">en.numista.com/api/api_key.php</a> &mdash; you need a free Numista account, so create one first if you want autofill.'.replace('&mdash;','-')},
 {sel:"#add-coin-btn",title:"3. Add a coin",text:"This is the Add Coin button. Click it to open the form for adding a coin to your collection."},
