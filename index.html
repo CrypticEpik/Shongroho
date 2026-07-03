@@ -587,6 +587,10 @@ body.bn-mode #coins-cards.gallery .coin-card{width:260px;flex:0 0 260px;}
 .ds-hole img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
 .ds-hole.filled{box-shadow:inset 0 0 0 2px rgba(90,60,25,.55),0 2px 6px rgba(40,22,4,.45);}
 .ds-hole.filled:hover{transform:scale(1.6);z-index:30;box-shadow:0 10px 26px rgba(0,0,0,.5);}
+.ds-hole.sh-diamond{border-radius:0;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);}
+.ds-hole.sh-square{border-radius:0;clip-path:inset(3% round 12%);}
+.ds-hole.sh-octagon{border-radius:0;clip-path:polygon(29% 0%,71% 0%,100% 29%,100% 71%,71% 100%,29% 100%,0% 71%,0% 29%);}
+.ds-hole.sh-scallop{border-radius:0;clip-path:polygon(100.00% 50.00%,99.67% 51.95%,98.70% 53.83%,97.20% 55.59%,95.29% 57.17%,93.15% 58.58%,90.98% 59.84%,88.95% 60.99%,87.23% 62.10%,85.93% 63.25%,85.11% 64.54%,84.78% 66.03%,84.88% 67.77%,85.31% 69.78%,85.94% 72.02%,86.58% 74.45%,87.10% 76.95%,87.32% 79.42%,87.15% 81.73%,86.50% 83.74%,85.36% 85.36%,83.74% 86.50%,81.73% 87.15%,79.42% 87.32%,76.95% 87.10%,74.45% 86.58%,72.02% 85.94%,69.78% 85.31%,67.77% 84.88%,66.03% 84.78%,64.54% 85.11%,63.25% 85.93%,62.10% 87.23%,60.99% 88.95%,59.84% 90.98%,58.58% 93.15%,57.17% 95.29%,55.59% 97.20%,53.83% 98.70%,51.95% 99.67%,50.00% 100.00%,48.05% 99.67%,46.17% 98.70%,44.41% 97.20%,42.83% 95.29%,41.42% 93.15%,40.16% 90.98%,39.01% 88.95%,37.90% 87.23%,36.75% 85.93%,35.46% 85.11%,33.97% 84.78%,32.23% 84.88%,30.22% 85.31%,27.98% 85.94%,25.55% 86.58%,23.05% 87.10%,20.58% 87.32%,18.27% 87.15%,16.26% 86.50%,14.64% 85.36%,13.50% 83.74%,12.85% 81.73%,12.68% 79.42%,12.90% 76.95%,13.42% 74.45%,14.06% 72.02%,14.69% 69.78%,15.12% 67.77%,15.22% 66.03%,14.89% 64.54%,14.07% 63.25%,12.77% 62.10%,11.05% 60.99%,9.02% 59.84%,6.85% 58.58%,4.71% 57.17%,2.80% 55.59%,1.30% 53.83%,0.33% 51.95%,0.00% 50.00%,0.33% 48.05%,1.30% 46.17%,2.80% 44.41%,4.71% 42.83%,6.85% 41.42%,9.02% 40.16%,11.05% 39.01%,12.77% 37.90%,14.07% 36.75%,14.89% 35.46%,15.22% 33.97%,15.12% 32.23%,14.69% 30.22%,14.06% 27.98%,13.42% 25.55%,12.90% 23.05%,12.68% 20.58%,12.85% 18.27%,13.50% 16.26%,14.64% 14.64%,16.26% 13.50%,18.27% 12.85%,20.58% 12.68%,23.05% 12.90%,25.55% 13.42%,27.98% 14.06%,30.22% 14.69%,32.23% 15.12%,33.97% 15.22%,35.46% 14.89%,36.75% 14.07%,37.90% 12.77%,39.01% 11.05%,40.16% 9.02%,41.42% 6.85%,42.83% 4.71%,44.41% 2.80%,46.17% 1.30%,48.05% 0.33%,50.00% 0.00%,51.95% 0.33%,53.83% 1.30%,55.59% 2.80%,57.17% 4.71%,58.58% 6.85%,59.84% 9.02%,60.99% 11.05%,62.10% 12.77%,63.25% 14.07%,64.54% 14.89%,66.03% 15.22%,67.77% 15.12%,69.78% 14.69%,72.02% 14.06%,74.45% 13.42%,76.95% 12.90%,79.42% 12.68%,81.73% 12.85%,83.74% 13.50%,85.36% 14.64%,86.50% 16.26%,87.15% 18.27%,87.32% 20.58%,87.10% 23.05%,86.58% 25.55%,85.94% 27.98%,85.31% 30.22%,84.88% 32.23%,84.78% 33.97%,85.11% 35.46%,85.93% 36.75%,87.23% 37.90%,88.95% 39.01%,90.98% 40.16%,93.15% 41.42%,95.29% 42.83%,97.20% 44.41%,98.70% 46.17%,99.67% 48.05%);}
 .ds-qbadge{position:absolute;right:-4px;bottom:-2px;background:var(--brand);color:#fff8ef;border-radius:9px;font-size:.62rem;font-weight:800;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,.4);pointer-events:none;z-index:4;}
 .ds-cap{margin-top:7px;text-align:center;font-size:.7rem;font-weight:700;color:#3a260e;line-height:1.28;overflow-wrap:break-word;max-width:100%;}
 .ds-cap .y{display:block;font-weight:600;font-size:.66rem;color:#54391a;}
@@ -758,7 +762,7 @@ body.dark #wc-wrap{background:#171310;}
 </div><div id="bdset-view"><div class="bd-wrap"><div class="bd-top"><div class="bd-mapcard"><div id="bd-map"></div><div class="bd-mappct" id="bd-mappct"></div></div><div class="bd-statbar" id="bd-statbar"></div></div><div class="bd-instr">Click an opening in the album to add or adjust how many of that year you own. Flip through the pages like a real album.</div><div class="ds-albumrow"><button class="ds-nav" id="bd-prev" onclick="bdFlip(-1)" title="Previous pages">&#8249;</button><div class="ds-book" id="bd-book"><div class="ds-spread" id="bd-spread"><div class="ds-page pg-l" id="bd-page-l"></div><div class="ds-page pg-r" id="bd-page-r"></div></div></div><button class="ds-nav" id="bd-next" onclick="bdFlip(1)" title="Next pages">&#8250;</button></div><div class="ds-dots" id="bd-dots"></div></div></div><!-- DANSCO 7070 VIRTUAL ALBUM -->
 <div id="wcset-view"><div class="wc-wrap"><div class="ds-head"><button class="cp-back" onclick="wcBack()">&#8592; Back to dashboard</button><div class="ds-title">World Country Set</div><div class="ds-sub">Click a country to add a coin or banknote from it to the set.</div></div><div class="wc-statbar" id="wc-statbar"></div><div class="map-card" style="margin:0;"><div class="map-wrap" id="wc-wrap"><canvas id="wc-canvas"></canvas></div><div class="wc-legend"><span class="wc-lg"><i class="wc-sw wc-sw0"></i>Not collected yet</span><span class="wc-lg"><i class="wc-sw wc-sw1"></i>In your set</span><span class="wc-lg-hint">Scroll to zoom &middot; drag to pan &middot; click a country to add</span></div></div></div><div class="map-tooltip" id="wc-tooltip"></div></div>
 <div class="pmodal-ov" id="wcc-ov"><div class="pmodal" style="width:430px;max-width:94vw;max-height:84vh;display:flex;flex-direction:column;"><h3 id="wcc-title" style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"></h3><div id="wcc-sub" style="font-size:.78rem;color:var(--muted);margin-bottom:10px;"></div><div id="wcc-body" style="overflow-y:auto;flex:1;min-height:0;"></div><div class="pm-actions"><button class="pm-btn ghost" onclick="closeP('wcc-ov')">Close</button><button class="pm-btn primary" onclick="wcAddNew()" id="wcc-addnew">+ Add a new coin</button></div></div></div>
-<div class="pmodal-ov" id="bdc-ov"><div class="pmodal" style="width:320px;text-align:center;"><h3 id="bdc-title" style="margin-bottom:2px;"></h3><div id="bdc-sub" style="font-size:.78rem;color:var(--muted);margin-bottom:12px;"></div><div style="display:flex;justify-content:center;margin-bottom:14px;"><span class="ds-holewrap"><span class="ds-hole filled" style="width:110px;height:110px;display:inline-block;cursor:default;"><img id="bdc-img" src="" alt=""></span></span></div><div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:6px;"><button id="bdc-minus" onclick="bdcAdj(-1)" style="width:42px;height:42px;border:none;border-radius:50%;background:var(--brand);color:#fff;font-size:1.4rem;font-weight:800;cursor:pointer;line-height:1;">−</button><span id="bdc-q" style="font-size:1.7rem;font-weight:800;min-width:44px;font-variant-numeric:tabular-nums;color:var(--ink);">0</span><button onclick="bdcAdj(1)" style="width:42px;height:42px;border:none;border-radius:50%;background:var(--brand);color:#fff;font-size:1.4rem;font-weight:800;cursor:pointer;line-height:1;">+</button></div><div style="font-size:.72rem;color:var(--muted);margin-bottom:10px;">coins of this year in your collection</div><div class="pm-actions" style="justify-content:center;"><button class="pm-btn primary" onclick="closeP('bdc-ov')">Done</button></div></div></div>
+<div class="pmodal-ov" id="bdc-ov"><div class="pmodal" style="width:360px;max-width:94vw;max-height:88vh;display:flex;flex-direction:column;text-align:center;"><h3 id="bdc-title" style="margin-bottom:2px;"></h3><div id="bdc-sub" style="font-size:.78rem;color:var(--muted);margin-bottom:12px;"></div><div style="display:flex;justify-content:center;margin-bottom:14px;"><span class="ds-holewrap"><span class="ds-hole filled" id="bdc-hole" style="width:110px;height:110px;display:inline-block;cursor:default;"><img id="bdc-img" src="" alt=""></span></span></div><div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:6px;"><button id="bdc-minus" onclick="bdcAdj(-1)" style="width:42px;height:42px;border:none;border-radius:50%;background:var(--brand);color:#fff;font-size:1.4rem;font-weight:800;cursor:pointer;line-height:1;">−</button><span id="bdc-q" style="font-size:1.7rem;font-weight:800;min-width:44px;font-variant-numeric:tabular-nums;color:var(--ink);">0</span><button onclick="bdcAdj(1)" style="width:42px;height:42px;border:none;border-radius:50%;background:var(--brand);color:#fff;font-size:1.4rem;font-weight:800;cursor:pointer;line-height:1;">+</button></div><div style="font-size:.72rem;color:var(--muted);margin-bottom:10px;">coins of this year in your collection</div><div id="bdc-list" style="text-align:left;overflow-y:auto;flex:1;min-height:0;margin:2px 0 6px;"></div><div class="pm-actions" style="justify-content:center;"><button class="pm-btn primary" onclick="closeP('bdc-ov')">Done</button></div></div></div>
 <div id="dansco-view">
   <div class="ds-wrap">
     <div class="ds-head">
@@ -1545,7 +1549,7 @@ var _bd=null;
 function _bdLoad(){if(_bd)return;var sv=null;try{sv=JSON.parse(localStorage.getItem('bdset_v3'));}catch(e){}
  _bd=BDSET.map(function(t,ti){var q=t.years.map(function(y){return y.q||0;});if(sv&&sv[ti]&&sv[ti].length===q.length)q=sv[ti].map(function(x){return x|0;});return q;});}
 function _bdSave(){try{localStorage.setItem('bdset_v3',JSON.stringify(_bd));}catch(e){}}
-function bdAdd(ti,yi,d){_bdLoad();var o=_bd[ti][yi]||0;var v=o+d;if(v<0)v=0;_bd[ti][yi]=v;_bdSave();bdRender();if(v!==o){try{_bdSyncCollection(ti,yi,v>o?1:-1);}catch(e){console.warn('bd sync',e);}}}
+function bdAdd(ti,yi,d){_bdLoad();var o=_bd[ti][yi]||0;var v=o+d;if(v<0)v=0;if(v===o){bdRender();return;}_bd[ti][yi]=v;_bdSave();try{if(v>o){_bdCreateAuto(ti,yi);}else{_bdRemoveOne(ti,yi);}_bdAfterChange();}catch(e){console.warn('bd sync',e);}bdRender();}
 function bdOpen(){_bdLoad();var dv=document.getElementById('dash-view'),bv=document.getElementById('bdset-view');if(dv)dv.style.display='none';if(bv)bv.style.display='block';var xv=document.getElementById('dansco-view');if(xv)xv.style.display='none';var wv=document.getElementById('wcset-view');if(wv)wv.style.display='none';var mb=document.getElementById('mode-bar');if(mb)mb.style.display='none';var t=document.querySelector('.htab');if(t)t.classList.remove('active');bdRender();try{window.scrollTo(0,0);}catch(e){}}
 function bdBackToDash(){var dv=document.getElementById('dash-view'),bv=document.getElementById('bdset-view');if(bv)bv.style.display='none';var xv=document.getElementById('dansco-view');if(xv)xv.style.display='none';var wv=document.getElementById('wcset-view');if(wv&&wv.style.display!=='none'){try{wcBack();}catch(e){wv.style.display='none';}}var mb=document.getElementById('mode-bar');if(mb)mb.style.display='';if(dv)dv.style.display='';var t=document.querySelector('.htab');if(t)t.classList.add('active');}
 function _bdStats(){var owned=0,complete=0,coins=0,vown=0,vtot=0;BDSET.forEach(function(t,ti){var q=_bd[ti];var sum=0,all=true;q.forEach(function(x){vtot++;sum+=x;if(x>0)vown++;else all=false;});coins+=sum;if(sum>0)owned++;if(all)complete++;});return{owned:owned,complete:complete,coins:coins,vown:vown,vtot:vtot,types:BDSET.length};}
@@ -1555,6 +1559,8 @@ function _bdMapPath(W,H){if(typeof features==='undefined'||!features||!features.
 function bdRenderMap(){var el=document.getElementById('bd-map');if(!el)return;var s=_bdStats();var pct=s.vtot?Math.round(s.vown/s.vtot*100):0;var pl=document.getElementById('bd-mappct');if(pl)pl.innerHTML='<b>'+pct+'%</b>complete<span>'+s.vown+' / '+s.vtot+' year variants</span>';var W=150,H=190;var d=_bdMapPath(W,H);if(!d){el.innerHTML='';return;}var fy=H*(1-pct/100);el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'"><defs><clipPath id="bdclip"><path d="'+d+'"/></clipPath><linearGradient id="bdgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bd9a63"/><stop offset="1" stop-color="#6b4a2b"/></linearGradient></defs><path d="'+d+'" fill="#ece4d6" stroke="#c9b48f" stroke-width="1"/><rect x="0" y="'+fy.toFixed(1)+'" width="'+W+'" height="'+(H-fy).toFixed(1)+'" fill="url(#bdgrad)" clip-path="url(#bdclip)"/><path d="'+d+'" fill="none" stroke="#6b4a2b" stroke-width="1.3"/></svg>';}
 /* ── BD album book: one denomination per page, 2-page spreads ── */
 var _BD_PAGES=null;
+var BD_SHAPES={'#6765':'diamond','#1790':'diamond','#1978':'diamond','#6766':'scallop','#6768':'scallop','#3164':'scallop','#1974':'scallop','#9354':'octagon','#14760':'square','#1975':'octagon','#9355':'octagon','#34783':'octagon'};
+function bdShape(t){var c=(t&&t.cata)||'';if(BD_SHAPES[c])return BD_SHAPES[c];if(t&&t.den==='5 Taka')return 'octagon';return 'round';}
 function _bdPages(){
   if(_BD_PAGES)return _BD_PAGES;
   var groups=[],gm={};
@@ -1570,6 +1576,7 @@ function bdPageHTML(pi){
   var h='<div class="ds-ptitle">'+_escc(pg.den)+'</div>';
   pg.items.forEach(function(ti){
     var t=BDSET[ti],q=_bd[ti];
+    var shp=bdShape(t);
     var sum=q.reduce(function(a,b){return a+b;},0);
     var rng=(t.range||'').replace(/\.0$/,'');
     h+='<div class="ds-sec">'+_escc(t.design)+'</div>';
@@ -1577,7 +1584,7 @@ function bdPageHTML(pi){
     h+='<div class="ds-row">';
     t.years.forEach(function(y,yi){
       var c=q[yi]||0;var filled=c>0&&t.rev;
-      h+='<div class="ds-slot"><span class="ds-holewrap"><button class="ds-hole'+(c>0?' filled':'')+'" style="width:58px;height:58px;" onclick="bdOpenSlot('+ti+','+yi+')" title="'+_escc(t.design+' '+y.y+(c>0?': '+c+' owned':': click to add'))+'">'
+      h+='<div class="ds-slot"><span class="ds-holewrap"><button class="ds-hole'+(c>0?' filled':'')+(shp!=='round'?' sh-'+shp:'')+'" style="width:58px;height:58px;" onclick="bdOpenSlot('+ti+','+yi+')" title="'+_escc(t.design+' '+y.y+(c>0?': '+c+' owned':': click to add'))+'">'
         +(filled?'<img src="'+t.rev+'" alt="">':'<span class="ds-plus">+</span>')+'</button>'
         +(c>1?'<span class="ds-qbadge">×'+c+'</span>':'')+'</span>'
         +'<div class="ds-cap"><span class="y">'+_escc(y.y)+'</span></div></div>';
@@ -1623,11 +1630,13 @@ function bdFlip(d,target){
 function bdOpenSlot(ti,yi){
   _bdLoad();_bdcTi=ti;_bdcYi=yi;
   var t=BDSET[ti],y=t.years[yi];
+  var hole=document.getElementById('bdc-hole');if(hole){var shp=bdShape(t);hole.className='ds-hole filled'+(shp!=='round'?' sh-'+shp:'');}
   var tt=document.getElementById('bdc-title'),sb=document.getElementById('bdc-sub'),im=document.getElementById('bdc-img'),q=document.getElementById('bdc-q');
   if(tt)tt.textContent=t.den+' · '+y.y;
   if(sb)sb.textContent=t.design+(t.cata?(' · '+t.cata):'');
   if(im){if(t.rev){im.src=t.rev;im.style.display='block';}else{im.style.display='none';}}
   bdcSync();
+  bdcRenderList();
   _openP('bdc-ov');
 }
 function bdcSync(){
@@ -1641,6 +1650,7 @@ function bdcAdj(d){
   if(_bdcTi<0)return;
   bdAdd(_bdcTi,_bdcYi,d);
   bdcSync();
+  bdcRenderList();
 }
 function bdRender(){
   _bdLoad();bdRenderStats();bdRenderMap();
@@ -2492,12 +2502,12 @@ function _bookTurn(book,leftEl,rightEl,fwd,oldL,oldR,newL,newR,done){
   setTimeout(finish,760);
 }
 function dsSpreadCount(){return Math.ceil(DANSCO_PAGES.length/2);}
-function dsStats(){var all=dsAllSlots();var got=0;all.forEach(function(s){if(DANSCO[s.key]&&DANSCO[s.key].img)got++;});return{total:all.length,got:got,left:all.length-got,pct:all.length?Math.round(got/all.length*100):0};}
+function dsStats(){var all=dsAllSlots();var got=0;all.forEach(function(s){var r=DANSCO[s.key];if(r&&(r.img||r.pid))got++;});return{total:all.length,got:got,left:all.length-got,pct:all.length?Math.round(got/all.length*100):0};}
 function dsRenderStats(){
   var s=dsStats(),el=document.getElementById('ds-statbar');if(!el)return;
   var p1=_dsSpread*2,p2=p1+1;
   var pgAll=dsAllSlots().filter(function(x){return x.pg===p1||x.pg===p2;});
-  var pgGot=pgAll.filter(function(x){return DANSCO[x.key]&&DANSCO[x.key].img;}).length;
+  var pgGot=pgAll.filter(function(x){var r=DANSCO[x.key];return r&&(r.img||r.pid);}).length;
   var card=function(l,b,sub,pct){return '<div class="bd-stat"><span class="bd-stat-l">'+l+'</span><b>'+b+'</b><span class="bd-stat-s">'+sub+'</span>'+(pct==null?'':'<div class="bd-sbar"><div style="width:'+pct+'%;"></div></div>')+'</div>';};
   el.innerHTML=card('Album complete',s.pct+'%',s.got+' / '+s.total+' openings filled',s.pct)
     +card('Coins collected',s.got,'across all pages',null)
@@ -2514,9 +2524,9 @@ function dsPageHTML(pi){
       h+='<div class="ds-row">';
       row.forEach(function(sl){
         var key='d'+pi+'-'+i;i++;
-        var rec=DANSCO[key];var filled=rec&&rec.img;
-        h+='<div class="ds-slot"><span class="ds-holewrap"><button class="ds-hole'+(filled?' filled':'')+'" style="width:'+sl.s+'px;height:'+sl.s+'px;" onclick="dsSlotClick(\''+key+'\')" title="'+_escc(sl.n+' '+sl.y+(filled?'':': click to add your coin'))+'">'
-          +(filled?'<img src="'+rec.img+'" alt="">':'<span class="ds-plus">+</span>')+'</button></span>'
+        var rec=DANSCO[key];var filled=rec&&rec.img;var occ=rec&&rec.pid&&!rec.img;
+        h+='<div class="ds-slot"><span class="ds-holewrap"><button class="ds-hole'+((filled||occ)?' filled':'')+'" style="width:'+sl.s+'px;height:'+sl.s+'px;" onclick="dsSlotClick(\''+key+'\')" title="'+_escc(sl.n+' '+sl.y+(filled?'':': click to add your coin'))+'">'
+          +(filled?'<img src="'+rec.img+'" alt="">':(occ?'<span class="ds-plus" style="color:rgba(240,215,170,.9);font-size:1.3rem;">●</span>':'<span class="ds-plus">+</span>'))+'</button></span>'
           +'<div class="ds-cap">'+_escc(sl.n)+'<span class="y">'+_escc(sl.y)+'</span>'+(sl.sub?'<span class="sub">'+_escc(sl.sub)+'</span>':'')+'</div></div>';
       });
       h+='</div>';
@@ -2559,21 +2569,49 @@ function dsFlip(d,target){
 }
 function dsFindSlot(key){var f=null;dsAllSlots().forEach(function(s){if(s.key===key)f=s;});return f;}
 function dsSlotClick(key){
-  _dsLoad();
-  var rec=DANSCO[key];
-  if(rec&&rec.img){
-    _dsOpenSlot=key;
-    var meta=dsFindSlot(key);
-    var t=document.getElementById('ds-m-title'),sb=document.getElementById('ds-m-sub'),im=document.getElementById('ds-m-img');
-    if(t)t.textContent=meta?meta.slot.n:'Coin';
-    if(sb)sb.textContent=meta?(meta.slot.y+(meta.slot.sub?(' · '+meta.slot.sub):'')+(rec.added?(' · added '+rec.added):'')):'';
-    if(im)im.src=rec.img;
-    _openP('ds-modal');
-  }else{
-    _dsPending=key;
-    var f=document.getElementById('ds-file');if(f)f.click();
-  }
+  _dsLoad();_dsOpenSlot=key;
+  var meta=dsFindSlot(key);
+  var t=document.getElementById('ds-m-title'),sb=document.getElementById('ds-m-sub');
+  if(t)t.textContent=meta?meta.slot.n:'Coin';
+  if(sb)sb.textContent=meta?(meta.slot.y+(meta.slot.sub?(' · '+meta.slot.sub):'')):'';
+  dsRenderModal();
+  _openP('ds-modal');
 }
+function dsRenderModal(){
+  var key=_dsOpenSlot;if(!key)return;var rec=DANSCO[key];var meta=dsFindSlot(key);
+  var body=document.getElementById('ds-m-body');var up=document.getElementById('ds-m-upload');if(!body)return;
+  var h='';
+  if(rec&&(rec.img||rec.pid)){
+    if(rec.img)h+='<div style="display:flex;justify-content:center;margin:2px 0 12px;"><img src="'+rec.img+'" alt="" style="width:150px;height:150px;object-fit:cover;border-radius:50%;box-shadow:0 6px 22px rgba(0,0,0,.3);border:3px solid var(--line-2);"></div>';
+    h+='<div class="wcc-sec">In this opening</div>';
+    var lbl=rec.existing?'From your collection':('Photo you added'+(rec.added?(' · '+rec.added):''));
+    h+='<div class="wcc-item"><span class="wcc-ph">◎</span><div class="wcc-mid"><div class="wcc-name">'+_escc(meta?meta.slot.n:'Coin')+'</div><div class="wcc-meta">'+lbl+'</div></div><button class="wcc-btn rm" onclick="dsRemove()">Remove</button></div>';
+    if(up)up.textContent='Replace with a photo';
+  }else{
+    if(up)up.textContent='Upload a photo';
+    var cands=_dsCandidates();
+    h+='<div class="wcc-sec">Add from your collection</div>';
+    if(cands.length){cands.forEach(function(c){h+=_setRow(c,false,"dsAddExisting('"+_escc(String(c.id))+"')",'');});}
+    else h+='<div class="wcc-empty">No U.S. coins in your collection to add yet. Upload a photo below, or add U.S. coins to your collection first.</div>';
+  }
+  body.innerHTML=h;
+}
+function _dsCandidates(){
+  return (COINS||[]).filter(function(c){
+    if(coinInSet(c,'dansco')||isBN(c)||c.wanted)return false;
+    return coinGeos(c).indexOf('United States of America')>=0;
+  });
+}
+function dsAddExisting(id){
+  var key=_dsOpenSlot;if(!key)return;var c=COINS.find(function(x){return String(x.id)===String(id);});if(!c)return;
+  addCoinToSet(c,'dansco');c.danscoSlot=key;
+  DANSCO[key]={img:(c.obv||c.rev||''),added:new Date().toISOString().slice(0,10),pid:c.id,existing:true};
+  _dsSave();
+  try{rebuildGeoCoins();initStaticStats();recalculate();renderCountryChart();buildFilterUI();}catch(e){}
+  try{_wcRefresh();}catch(e){}cloudSaveSoon();
+  dsRender();dsRenderModal();
+}
+function dsUploadPhoto(){if(!_dsOpenSlot)return;_dsPending=_dsOpenSlot;var f=document.getElementById('ds-file');if(f)f.click();}
 function _dsCompress(file,cb){
   var r=new FileReader();
   r.onload=function(e){
@@ -2594,19 +2632,27 @@ function dsFileChosen(input){
   var key=_dsPending;_dsPending=null;
   _dsCompress(f,function(url){
     var prev=DANSCO[key];
-    if(prev&&prev.pid){
+    if(prev&&prev.pid&&!prev.existing){
       DANSCO[key]={img:url,added:prev.added,pid:prev.pid};
       try{_dsSyncReplace(prev.pid,url);}catch(e){console.warn('ds sync',e);}
     }else{
+      if(prev&&prev.existing){var oc=COINS.find(function(x){return String(x.pid||x.id)===String(prev.pid)&&coinInSet(x,'dansco');});if(oc){removeCoinFromSet(oc,'dansco');try{delete oc.danscoSlot;}catch(e){}}}
       var pid=null;
       try{pid=_dsSyncAdd(key,url);}catch(e){console.warn('ds sync',e);}
       DANSCO[key]={img:url,added:new Date().toISOString().slice(0,10),pid:pid};
     }
     _dsSave();dsRender();
+    var mo=document.getElementById('ds-modal');if(mo&&mo.style.display!=='none')dsRenderModal();
   });
 }
 function dsReplace(){if(!_dsOpenSlot)return;_dsPending=_dsOpenSlot;closeP('ds-modal');var f=document.getElementById('ds-file');if(f)f.click();}
-function dsRemove(){if(!_dsOpenSlot)return;if(!confirm('Remove this coin photo from the album?'))return;var rec=DANSCO[_dsOpenSlot];delete DANSCO[_dsOpenSlot];_dsSave();closeP('ds-modal');dsRender();if(rec&&rec.pid){try{_dsSyncRemove(rec.pid);}catch(e){console.warn('ds sync',e);}}}
+function dsRemove(){if(!_dsOpenSlot)return;if(!confirm('Remove this coin from the album?'))return;var key=_dsOpenSlot;var rec=DANSCO[key];delete DANSCO[key];_dsSave();
+  if(rec){
+    if(rec.existing){var c=COINS.find(function(x){return String(x.pid||x.id)===String(rec.pid)&&coinInSet(x,'dansco');});if(c){removeCoinFromSet(c,'dansco');try{delete c.danscoSlot;}catch(e){}}try{rebuildGeoCoins();initStaticStats();recalculate();renderCountryChart();buildFilterUI();}catch(e){}try{_wcRefresh();}catch(e){}cloudSaveSoon();}
+    else if(rec.pid){try{_dsSyncRemove(rec.pid);}catch(e){console.warn('ds sync',e);}}
+  }
+  dsRender();dsRenderModal();
+}
 
 /* ═══════════════════════════════════════════════════════════════
    SET MEMBERSHIP HELPERS (stored inside each coin's data - no DB change)
@@ -2771,24 +2817,65 @@ function wcAddNew(){
    SET → COLLECTION LINKING (BD year set + Dansco 7070)
    ═══════════════════════════════════════════════════════════════ */
 function _bdYearStr(y){var m=String(y&&y.y||'').match(/\d{4}/);return m?m[0]:String(y&&y.y||'');}
-function _bdSyncCollection(ti,yi,d){
-  var t=BDSET[ti];if(!t)return;
-  var ys=_bdYearStr(t.years[yi]);
-  if(d>0){
-    var pid=_setNextPid('CA-BD#');
-    COINS.unshift({sysId:'SYS'+pid.replace(/[^A-Z0-9]/gi,''),pid:pid,id:pid,kind:'coin',
-      issuer:'Bangladesh',country:'Bangladesh',geoCountry:null,collections:[],sets:['bd'],
-      denom:t.den,series:t.design||null,circType:'Circulation',type:'Circulation',year:ys,
-      km:t.cata||'',numista_id:(t.cata||'').replace('#',''),grade:'',metal:'',comp:'',
-      asw_g:0,agw_g:0,weight:0,diameter:0,thickness:0,qty:1,buy:0,bought:'',value:0,
-      notes:'Added from the Bangladeshi Year Set',tags:['bd-year-set'],obv:'',rev:t.rev||'',photos:[]});
-  }else if(d<0){
-    var i=COINS.findIndex(function(c){return coinInSet(c,'bd')&&c.denom===t.den&&(c.series||'')===(t.design||'')&&String(c.year)===ys;});
-    if(i>-1){var rem=COINS.splice(i,1)[0];try{if(SUPA)sbDeleteCoin(rem.id);}catch(e){}}
-  }else return;
-  try{rebuildGeoCoins();initStaticStats();recalculate();renderCountryChart();buildFilterUI();}catch(e){}
-  try{_wcRefresh();}catch(e){}
-  cloudSaveSoon();
+function _setRow(c,inSet,addCall,rmCall){
+  var img=c.obv||c.rev;
+  var thumb=img?'<img src="'+img+'" alt="">':'<span class="wcc-ph">◎</span>';
+  var btn=inSet?'<button class="wcc-btn rm" onclick="'+rmCall+'">Remove</button>':'<button class="wcc-btn add" onclick="'+addCall+'">+ Add</button>';
+  return '<div class="wcc-item">'+thumb+'<div class="wcc-mid"><div class="wcc-name">'+_escc(c.denom||'?')+(isBN(c)?' · banknote':'')+'</div><div class="wcc-meta">'+_escc(c.issuer||'')+' · '+_escc(c.year||'')+' · '+_escc(c.pid||c.id||'')+'</div></div>'+btn+'</div>';
+}
+function _bdSlotKey(ti,yi){return ti+'-'+yi;}
+function _bdSlotCoins(ti,yi){var k=_bdSlotKey(ti,yi);return (COINS||[]).filter(function(c){return coinInSet(c,'bd')&&c.bdSlot===k;});}
+function _bdAfterChange(){try{rebuildGeoCoins();initStaticStats();recalculate();renderCountryChart();buildFilterUI();}catch(e){}try{_wcRefresh();}catch(e){}cloudSaveSoon();}
+function _bdCreateAuto(ti,yi){
+  var t=BDSET[ti];if(!t)return;var ys=_bdYearStr(t.years[yi]);var pid=_setNextPid('CA-BD#');var k=_bdSlotKey(ti,yi);
+  COINS.unshift({sysId:'SYS'+pid.replace(/[^A-Z0-9]/gi,''),pid:pid,id:pid,kind:'coin',
+    issuer:'Bangladesh',country:'Bangladesh',geoCountry:null,collections:[],sets:['bd'],bdSlot:k,bdAuto:true,
+    denom:t.den,series:t.design||null,circType:'Circulation',type:'Circulation',year:ys,
+    km:t.cata||'',numista_id:(t.cata||'').replace('#',''),grade:'',metal:'',comp:'',
+    asw_g:0,agw_g:0,weight:0,diameter:0,thickness:0,qty:1,buy:0,bought:'',value:0,
+    notes:'Added from the Bangladeshi Year Set',tags:['bd-year-set'],obv:'',rev:t.rev||'',photos:[]});
+}
+function _bdRemoveOne(ti,yi){
+  var k=_bdSlotKey(ti,yi);
+  var iAuto=COINS.findIndex(function(c){return coinInSet(c,'bd')&&c.bdSlot===k&&c.bdAuto;});
+  if(iAuto>-1){var rem=COINS.splice(iAuto,1)[0];try{if(SUPA)sbDeleteCoin(rem.id);}catch(e){}return;}
+  var iAtt=COINS.findIndex(function(c){return coinInSet(c,'bd')&&c.bdSlot===k;});
+  if(iAtt>-1){var c=COINS[iAtt];removeCoinFromSet(c,'bd');try{delete c.bdSlot;}catch(e){}}
+}
+function _bdCandidates(ti,yi){
+  var t=BDSET[ti];if(!t)return [];var ys=_bdYearStr(t.years[yi]);
+  return (COINS||[]).filter(function(c){
+    if(coinInSet(c,'bd')||isBN(c))return false;
+    if(coinGeos(c).indexOf('Bangladesh')<0)return false;
+    if(String(c.denom||'').trim().toLowerCase()!==String(t.den||'').trim().toLowerCase())return false;
+    var m=String(c.year||'').match(/\d{4}/);var cy=m?m[0]:'';
+    return cy===ys||cy==='';
+  });
+}
+function bdcAddExisting(id){
+  if(_bdcTi<0)return;var c=COINS.find(function(x){return String(x.id)===String(id);});if(!c)return;
+  addCoinToSet(c,'bd');c.bdSlot=_bdSlotKey(_bdcTi,_bdcYi);
+  _bd[_bdcTi][_bdcYi]=(_bd[_bdcTi][_bdcYi]||0)+1;_bdSave();
+  _bdAfterChange();bdRender();bdcSync();bdcRenderList();
+}
+function bdcRemoveCoin(id){
+  if(_bdcTi<0)return;var c=COINS.find(function(x){return String(x.id)===String(id);});if(!c)return;
+  var wasAuto=!!c.bdAuto;var i=COINS.indexOf(c);
+  if(wasAuto){COINS.splice(i,1);try{if(SUPA)sbDeleteCoin(c.id);}catch(e){}}
+  else{removeCoinFromSet(c,'bd');try{delete c.bdSlot;}catch(e){}}
+  _bd[_bdcTi][_bdcYi]=Math.max(0,(_bd[_bdcTi][_bdcYi]||0)-1);_bdSave();
+  _bdAfterChange();bdRender();bdcSync();bdcRenderList();
+}
+function bdcRenderList(){
+  var el=document.getElementById('bdc-list');if(!el||_bdcTi<0)return;
+  var attached=_bdSlotCoins(_bdcTi,_bdcYi).filter(function(c){return !c.bdAuto;});
+  var cands=_bdCandidates(_bdcTi,_bdcYi);
+  var h='';
+  if(attached.length){h+='<div class="wcc-sec">From your collection, in this set</div>';attached.forEach(function(c){h+=_setRow(c,true,'',"bdcRemoveCoin('"+_escc(String(c.id))+"')");});}
+  h+='<div class="wcc-sec">Add from your collection</div>';
+  if(cands.length){cands.forEach(function(c){h+=_setRow(c,false,"bdcAddExisting('"+_escc(String(c.id))+"')",'');});}
+  else h+='<div class="wcc-empty">No matching '+_escc(BDSET[_bdcTi].den)+' coins in your collection for this year. Use + above to note one you own.</div>';
+  el.innerHTML=h;
 }
 function _dsSyncAdd(key,imgUrl){
   var meta=dsFindSlot(key);if(!meta)return null;
@@ -3210,14 +3297,13 @@ window.addEventListener('resize',()=>{
 
 <!-- DANSCO SLOT MODAL -->
 <div class="pmodal-ov" id="ds-modal">
-  <div class="pmodal" style="width:380px;text-align:center;">
+  <div class="pmodal" style="width:400px;max-width:94vw;max-height:86vh;display:flex;flex-direction:column;text-align:center;">
     <h3 id="ds-m-title">Coin</h3>
-    <div id="ds-m-sub" style="font-size:.8rem;color:#9a8a6a;margin-bottom:12px;"></div>
-    <div style="display:flex;justify-content:center;margin-bottom:14px;"><img id="ds-m-img" src="" alt="" style="width:190px;height:190px;object-fit:cover;border-radius:50%;box-shadow:0 6px 22px rgba(0,0,0,.3);border:3px solid #d5c6a4;"></div>
+    <div id="ds-m-sub" style="font-size:.8rem;color:var(--muted);margin-bottom:10px;"></div>
+    <div id="ds-m-body" style="text-align:left;overflow-y:auto;flex:1;min-height:0;"></div>
     <div class="pm-actions" style="justify-content:center;">
       <button class="pm-btn ghost" onclick="closeP('ds-modal')">Close</button>
-      <button class="pm-btn ghost" onclick="dsReplace()">Replace photo</button>
-      <button class="pm-btn primary" style="background:#b3372a;" onclick="dsRemove()">Remove</button>
+      <button class="pm-btn primary" id="ds-m-upload" onclick="dsUploadPhoto()">Upload a photo</button>
     </div>
   </div>
 </div>
