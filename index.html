@@ -1352,7 +1352,7 @@ function setupMapEvents(tooltipId){
 // ── LOAD MAP ──────────────────────────────────────────────────────────────────
 function loadMap(){
   features=decodeTopology(WORLD_TOPO);
-  features=features.filter(f=>f.name!=='Antarctica');
+  features=features.filter(f=>f.name!=='Antarctica');try{var _ws=features.find(function(f){return f.name==='W. Sahara';});if(_ws){_ws.polygons=[[[[-13.1,27.66],[-8.67,27.66],[-13.0,21.33],[-17.0,21.33],[-16.3,22.4],[-15.4,23.8],[-14.2,25.4],[-13.4,26.6]]]];try{_ws.cLon=null;_ws.cLat=null;}catch(e){}}}catch(e){}
   // Compute geographic centroid for scale-on-hover effect
   features.forEach(f=>{
     // Use the largest polygon (most vertices) as centroid base
@@ -2836,7 +2836,7 @@ function _edgeCutout(url,cb){
   try{
     if(!/^https?:/i.test(url)){run(url,false);return;}
     var prox='https://wsrv.nl/?url='+encodeURIComponent(url);
-    fetch(url,{mode:'cors'}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(b){run(URL.createObjectURL(b),true);}).catch(function(){
+    fetch(url+(url.indexOf('?')<0?'?':'&')+'cb='+Date.now(),{mode:'cors'}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(b){run(URL.createObjectURL(b),true);}).catch(function(){
       fetch(prox,{mode:'cors'}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(b){run(URL.createObjectURL(b),true);}).catch(function(){cb(url);});
     });
   }catch(e){cb(url);}
@@ -3244,7 +3244,8 @@ let SBC=null,_user=null;
 function _sbReady(){if(SBC)return SBC;if(SUPA&&window.supabase){SBC=window.supabase.createClient(SB_URL,SB_KEY);}return SBC;}
 async function sbInit(){if(!_sbReady()){console.warn('Supabase SDK not loaded');return;}_showChecking();try{const {data}=await SBC.auth.getSession();_user=data&&data.session?data.session.user:null;SBC.auth.onAuthStateChange(function(ev,sess){const was=_user&&_user.id;_user=sess?sess.user:null;if(_user&&_user.id!==was){_afterLogin();}else if(!_user){if(!_bootRoute())_showLogin();}});if(_user){await _afterLogin();}else{if(!_bootRoute())_showLogin();}}catch(e){console.warn('sbInit',e);if(!_bootRoute())_showLogin();}}
 async function _captureCountry(){try{if(!_user||!SBC)return;if(_profile&&_profile.country)return;var r=await fetch('https://ipapi.co/json/',{cache:'no-store'});if(!r||!r.ok)return;var d=await r.json();var name=(d&&(d.country_name||d.country))||'';var code=((d&&d.country_code)||'').toLowerCase();if(!name&&!code)return;_profile.country=name;_profile.country_code=code;await SBC.from('profiles').upsert({id:_user.id,country:name||null,country_code:code||null});}catch(e){}}
-async function _afterLogin(){OWNER=true;try{updateOwnerUI();}catch(e){}await supabaseLoad();try{applyRoute();}catch(e){}hideBoot();try{_captureCountry();}catch(e){}}
+async function _afterLogin(){OWNER=true;try{updateOwnerUI();}catch(e){}await supabaseLoad();try{applyRoute();}catch(e){}_bootWaitReady();try{_captureCountry();}catch(e){}}
+function _bootWaitReady(){var t0=Date.now();(function chk(){var rdy=false;try{rdy=(typeof mapReady!=='undefined'&&mapReady);}catch(e){rdy=true;}if(rdy||Date.now()-t0>15000){requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(hideBoot,150);});});}else{setTimeout(chk,120);}})();}
 function hideBoot(){var o=document.getElementById('boot-ov');if(!o||o._gone)return;o._gone=true;o.classList.add('boot-hide');setTimeout(function(){if(o&&o.parentNode)o.parentNode.removeChild(o);},650);}
 try{window.addEventListener('load',function(){setTimeout(hideBoot,12000);});}catch(e){}
 function _showChecking(){var o=document.getElementById('login-ov');if(o){o.style.display='block';o.classList.add('lp-checking');}}
